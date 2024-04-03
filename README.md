@@ -9,21 +9,40 @@ xxxxxxxxxxxxxxxxxxx
 
 ## Quick Start
 ### Installation
-- **Step One - Clone the repository**
+- **Step One - Clone the repository**  
 Clone the repository to the desired location on your system using the following command:
 ```
 git clone
 ```
 
-- **Step Two - Create a new conda environment**
+- **Step Two - Create a new conda environment**  
 Create a new conda environment via the following command, replacing /full/path/to/cloned/repo with the appropriate path to your cloned repository:
 ```
 conda env create -n VCP_env --file /full/path/to/cloned/repo/vcp_env.yaml
 ```
 
+Activate the environment by executing:
+```
+conda activate VCP_env
+```
+
+If you have trouble creating the environment using the above commands, you can alternatively follow the instructions to create a enviroment.
+```
+conda create -n mvp
+conda activate mvp
+
+conda install python (testing on 3.9)
+conda install biopython
+conda install snakemake
+conda install samtools
+conda install bedtools
+conda install diamond
+```
+
+If you do not already have conda installed, please install using the instructions provided [here](https://developers.google.com/earth-engine/guides/python_install-conda/).
 
 
-
+### Test Your Installation
 
 
 
