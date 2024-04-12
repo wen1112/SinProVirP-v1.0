@@ -7,8 +7,8 @@
 ## Citation
 xxxxxxxxxxxxxxxxxxx  
 
-## Quick Start
-### Installation
+## Installation  
+
 - **Step One - Clone the repository**  
 Clone the repository to the desired location on your system using the following command:
 ```
@@ -42,7 +42,42 @@ conda install diamond
 If you do not already have conda installed, please install using the instructions provided [here](https://developers.google.com/earth-engine/guides/python_install-conda/).
 
 
-### Test Your Installation
+## Test Your Installation
+### Iuput file
+
++ If the input file is Paired-end, then it will 'cat R1.fq R2.fq > R1R2.fq' as the final input file because of diamond required SE reads input.
++ The input file each col should split by '\t'.
++ Paired-end reads
+  |  sample_id   |    fq1      |    fq2     |
+  | :----------: |  :--------: | :--------: |
+  |     s1       |  s1.1.fq.gz | s1.2.fq.gz |
+  |     s2       |  s2.1.fq.gz | s2.2.fq.gz |
+  |     s3       |  s3.1.fq.gz | s3.2.fq.gz |
+  |     s4       |  s4.1.fq.gz | s4.2.fq.gz |
++ Single-end reads
+  |  sample_id   |    fq1      |    fq2     |
+  | :----------: |  :--------: | :--------: |
+  |     s1       |  s1.1.fq.gz |            |
+  |     s2       |  s2.1.fq.gz |            |
+  |     s3       |  s3.1.fq.gz |            |
+  |     s4       |  s4.1.fq.gz |            |
+
+  
+### Quick start
+
++ Please remeber to change the path in 'config.yaml' & 'sample_file.txt'.
+```
+cd /full/path/to/cloned/repo/test_data
+bash work.sh
+```
+
+work.sh:
+```
+snakemake -s /full/path/to/cloned/repo/Snakefile.py \
+--configfile /full/path/to/cloned/repo/test_data/config.yaml \
+--jobs 99 --cores 1 --max-threads 16
+```
 
 
+### Output file
 
