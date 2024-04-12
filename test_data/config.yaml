@@ -1,0 +1,20 @@
+pipeline_directory: /hwfsxx1/ST_HN/P17Z10200N0246/User/xiongliwen/QuantifyPhageProject/snakemake/00.VCP_smk_V1.0
+
+# Sample file specifies sample names and names of files containing sample reads
+# Format: Tab-delimited, two columns
+# sample_name  reads_R1R2file
+# See example (samp_file.txt) in the testing folder
+sample_file: /hwfsxx1/ST_HN/P17Z10200N0246/User/xiongliwen/QuantifyPhageProject/snakemake/00.VCP_smk_V1.0/test_data/sample_file.txt
+
+# In which directory should results be outputted?
+outdir: /hwfsxx1/ST_HN/P17Z10200N0246/User/xiongliwen/QuantifyPhageProject/snakemake/00.VCP_smk_V1.0/test_data
+
+
+# The value setting
+threads: 4 # see usage instructions - can increase if you have more threads available
+ID: 90 # diamond balst used identity
+COVER: 80 # diamond balst used coverage
+MARKER_COVERAGE: 0.7 # 
+MARKER_RATIO: 0.5 #
+threads: 8 # number of threads to use
+ 

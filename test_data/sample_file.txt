@@ -1,0 +1,1 @@
+sample1	/hwfsxx1/ST_HN/P17Z10200N0246/User/xiongliwen/QuantifyPhageProject/snakemake/00.VCP_smk_V1.0/test_data/host_phage100_repeat_v2_01_0.1_R1R2.fastq
