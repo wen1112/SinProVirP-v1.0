@@ -39,7 +39,7 @@ conda install -c conda-forge bedtools=2.31.0
 conda install -c conda-forge diamond=2.0.14
 ```
 
-If you do not already have conda installed, please install using the instructions provided [here](https://developers.google.com/earth-engine/guides/python_install-conda/).
+If you do not already have conda installed, please install using the instructions provided [here](https://developers.google.com/earth-engine/guides/python_install-conda/).  
 If you have some problem with snakemake install, please install using the instructions provided [here](https://snakemake.readthedocs.io/en/v7.25.0/getting_started/installation.html)
 
 ## Test Your Installation
