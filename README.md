@@ -48,19 +48,28 @@ If you have some problem with snakemake install, please install using the instru
 + If the input file is Paired-end, then it will 'cat R1.fq R2.fq > R1R2.fq' as the final input file because of diamond required SE reads input.
 + The input file each col should split by '\t'.
 + Paired-end reads
-  |  sample_id   |    fq1      |    fq2     |
-  | :----------: |  :--------: | :--------: |
-  |     s1       |  s1.1.fq.gz | s1.2.fq.gz |
-  |     s2       |  s2.1.fq.gz | s2.2.fq.gz |
-  |     s3       |  s3.1.fq.gz | s3.2.fq.gz |
-  |     s4       |  s4.1.fq.gz | s4.2.fq.gz |
+  |  sample_id   |     fq1      |     fq2     |
+  | :----------: |  :--------:  | :--------:  |
+  |     s1       |  s1.R1.fq.gz | s1.R2.fq.gz |
+  |     s2       |  s2.R1.fq.gz | s2.R2.fq.gz |
+  |     s3       |  s3.R1.fq.gz | s3.R2.fq.gz |
+  |     s4       |  s4.R1.fq.gz | s4.R2.fq.gz |
+
++ Also you can 'cat R1.fq R2.fq > R1R2.fq' before you input file.
+  |  sample_id   |       fq       |
+  | :----------: |  :----------:  |
+  |     s1       |  s1.R1R2.fq.gz |
+  |     s2       |  s2.R1R2.fq.gz |
+  |     s3       |  s3.R1R2.fq.gz |
+  |     s4       |  s4.R1R2.fq.gz |
+ 
 + Single-end reads
-  |  sample_id   |    fq1      |    fq2     |
-  | :----------: |  :--------: | :--------: |
-  |     s1       |  s1.1.fq.gz |            |
-  |     s2       |  s2.1.fq.gz |            |
-  |     s3       |  s3.1.fq.gz |            |
-  |     s4       |  s4.1.fq.gz |            |
+  |  sample_id   |     fq1      |    fq2     |
+  | :----------: |  :--------:  | :--------: |
+  |     s1       |  s1.R1.fq.gz |            |
+  |     s2       |  s2.R1.fq.gz |            |
+  |     s3       |  s3.R1.fq.gz |            |
+  |     s4       |  s4.R1.fq.gz |            |
 
   
 ### Quick start
@@ -80,4 +89,5 @@ snakemake -s /full/path/to/cloned/repo/Snakefile.py \
 
 
 ### Output file
++ *.abundance
 
