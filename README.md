@@ -12,7 +12,7 @@ xxxxxxxxxxxxxxxxxxx
 - **Step One - Clone the repository**  
 Clone the repository to the desired location on your system using the following command:
 ```
-git clone
+git clone https://github.com/wen1112/VCP_v1.0.git
 ```
 
 - **Step Two - Create a new conda environment**  
@@ -28,19 +28,19 @@ conda activate VCP_env
 
 If you have trouble creating the environment using the above commands, you can alternatively follow the instructions to create a enviroment.
 ```
-conda create -n mvp
-conda activate mvp
+conda create -n VCP_env
+conda activate VCP_env
 
-conda install python (testing on 3.9)
-conda install biopython
-conda install snakemake
-conda install samtools
-conda install bedtools
-conda install diamond
+conda install -c conda-forge python=3.9
+conda install -c conda-forge biopython=1.81
+conda install -c conda-forge -c bioconda snakemake=7.25.0
+conda install -c conda-forge samtools=1.6
+conda install -c conda-forge bedtools=2.31.0
+conda install -c conda-forge diamond=2.0.14
 ```
 
 If you do not already have conda installed, please install using the instructions provided [here](https://developers.google.com/earth-engine/guides/python_install-conda/).
-
+If you have some problem with snakemake install, please install using the instructions provided [here](https://snakemake.readthedocs.io/en/v7.25.0/getting_started/installation.html)
 
 ## Test Your Installation
 ### Iuput file
