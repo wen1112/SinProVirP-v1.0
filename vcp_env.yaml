@@ -158,7 +158,7 @@ dependencies:
   - rich=13.4.1=pyhd8ed1ab_0
   - rsa=4.9=pyhd8ed1ab_0
   - s3transfer=0.6.1=pyhd8ed1ab_0
-  - samtools=1.17=hd87286a_1
+  - samtools=1.6=h3f2fef4_8
   - setuptools=67.7.2=pyhd8ed1ab_0
   - six=1.16.0=pyh6c4a22f_0
   - slacker=0.14.0=py_0
