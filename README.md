@@ -42,7 +42,7 @@ If you do not already have conda installed, please install using the instruction
 If you have some problem with snakemake install, please install using the instructions provided [here](https://snakemake.readthedocs.io/en/v7.25.0/getting_started/installation.html)
 
 ## Test Your Installation
-### Iuput file
+### Input file
 
 + If the input file is Paired-end, then it will 'cat R1.fq R2.fq > R1R2.fq' as the final input file because of diamond required SE reads input.
 + The input file each col should split by '\t'.
