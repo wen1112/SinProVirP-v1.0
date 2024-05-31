@@ -1,6 +1,6 @@
 '''
-2024-04-03, xiongliwen
-Test - V1.0
+2024-05-30
+VCP v1.0
 This is a snakemake rule file script for the VCP pipline.
 '''
 
@@ -11,6 +11,7 @@ import os
 from os.path import join
 import logging
 import subprocess
+from datetime import datetime
 
 
 #logger = logging.getLogger(__name__)
@@ -58,7 +59,7 @@ sample_names = sample_reads.keys()
 # Step 3 - Define the rules
 rule all:
     input:
-        expand(f"{outdir}/{{samp}}/{{samp}}.sorted.bam.idxstats.abundance", samp=sample_names)
+        expand(f"{outdir}/{{samp}}/{{samp}}.sorted.bam.idxstats.addTaxonomy.final.abundance.txt", samp=sample_names)
 
 rule diamond_blastx:
     input:
@@ -149,5 +150,19 @@ rule calculate_relative_abudance:
             {input.filter_idxstats} {params.pipe_directory}/database/all.324056.cancidate.pc.subdist.n324056.representPR.rmPhageHomo.rmMarkerHomo.addRecovered.rmBacHMM.Shinkage.above3.sameVC \
             {params.MARKER_RATIO} {output.abundance}
             """
+
+rule add_taxonomy:
+        input:
+            abundance = f"{outdir}/{{samp}}/{{samp}}.sorted.bam.idxstats.abundance",
+        output:
+            final = f"{outdir}/{{samp}}/{{samp}}.sorted.bam.idxstats.addTaxonomy.final.abundance.txt"
+        params:
+            pipe_directory = config['pipeline_directory']
+        shell: """
+            python {params.pipe_directory}/script/add_taxonomy.py \
+            {params.pipe_directory}/database/20230821_VC_tax_lifestyle_host.txt \
+            {input.abundance} {output.final}
+            """
+
 
 #logger.info("The VCP pipline is over!")
