@@ -1,0 +1,1 @@
+sample1	/hwfsxx1/ST_HN/P17Z10200N0246/User/xiongliwen/QuantifyPhageProject/snakemake/00.VCP_smk_V1.0/test_data/test1_R1.fastq	/hwfsxx1/ST_HN/P17Z10200N0246/User/xiongliwen/QuantifyPhageProject/snakemake/00.VCP_smk_V1.0/test_data/test1_R2.fastq
