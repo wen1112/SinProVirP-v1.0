@@ -101,7 +101,7 @@ sample_file: /full/path/to/sample/file
 outdir: /full/path/to/output/directory
 ```
 
-+ sample_file.txt - split each col by "\t".  
++ sample_file.txt - split each col by **"\t"**.  
 ```
 sample1 /full/path/to/cloned/repo/test_data/test1_R1R2.fastq
 sample2 /full/path/to/cloned/repo/test_data/test2_R1R2.fastq
