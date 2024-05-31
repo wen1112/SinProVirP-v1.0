@@ -77,6 +77,7 @@ If you have some problem with snakemake install, please install using the instru
 
 ```
 cd /full/path/to/cloned/repo/test_data
+unzip test*zip
 bash work.sh
 ```
 
