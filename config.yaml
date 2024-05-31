@@ -11,10 +11,9 @@ outdir: /full/path/to/output/directory
 
 
 # The value setting
-threads: 4 # see usage instructions - can increase if you have more threads available
+threads: 8 # see usage instructions - can increase if you have more threads available
 ID: 90 # diamond balst used identity
 COVER: 80 # diamond balst used coverage
 MARKER_COVERAGE: 0.7 # 
 MARKER_RATIO: 0.5 #
-threads: 8 # number of threads to use
  
