@@ -73,7 +73,8 @@ If you have some problem with snakemake install, please install using the instru
   
 ### Quick start
 
-+ Please remeber to **change the path in 'work.sh', 'config.yaml'  and 'sample_file.txt'**.  
++ We need three file: **'work.sh', 'config.yaml' and 'sample_file.txt'**
++ Please remeber to **change the path in it**.  
 
 ```
 cd /full/path/to/cloned/repo/test_data
