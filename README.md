@@ -1,8 +1,8 @@
-# VCP
-## Accurate and Rapid Metagenomic Virome Profiling using a Marker Protein-based Approach
-### A novel marker-based virome profiling approach based on “viral clusters (VCs)-marker Protein Clusters (mPCs)”, which show higher accuracy, comprehensiveness and efficiency, is considerably support large-scale human virome studies to decipher the relationship between gut viruses and human health and disease.
+## VCP
+### Viral Cluster Profiling (VCP), a signature protein-based tool developed for genus-level profiling of the human gut virome.
 
-<img width="440" alt="image" src="https://github.com/wen1112/VCP_v1.0/assets/71487119/f95bb9a5-3985-414e-a8c6-7cdbb9d05039">
+<img width="868" alt="image" src="https://github.com/user-attachments/assets/25e4a88a-2b57-4f6f-919e-e0b416024fbd">
+
 
 ## Citation
 xxxxxxxxxxxxxxxxxxx  
