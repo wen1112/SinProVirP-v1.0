@@ -12,8 +12,8 @@ outdir: /full/path/to/cloned/repo/test_data
 
 # The value setting
 threads: 8 # see usage instructions - can increase if you have more threads available
-ID: 90 # diamond balst used identity
-COVER: 80 # diamond balst used coverage
+IDENTITY: 90 # diamond balst used identity
+COVERAGE: 80 # diamond balst used coverage
 MARKER_COVERAGE: 0.7 # 
 MARKER_RATIO: 0.5 #
  
