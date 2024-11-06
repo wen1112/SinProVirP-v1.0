@@ -74,7 +74,7 @@ rule diamond_blastx:
     shell:"""
         diamond blastx --db {params.pipe_directory}/database/PhageMarkerProtein.V6.Diamond.dmnd \
         -q {input.reads} -o {output.sam} --max-target-seqs 1 --outfmt 101 --evalue 1e-6 --unal 0 \
-        --id {params.ID} --query-cover {params.COVER}
+        --id {params.IDENTITY} --query-cover {params.COVERAGE}
         """
 
 rule sam_to_bam:
