@@ -167,8 +167,8 @@ The sample ./test_data/sample1/sample1.sorted.bam.idxstats.addTaxonomy.final.abu
 ```
 # The value setting
 threads: 8 # see usage instructions - can increase if you have more threads available
-ID: 90 # diamond balst used identity
-COVER: 80 # diamond balst used coverage
+IDENTITY: 90 # diamond balst used identity
+COVERAGE: 80 # diamond balst used coverage
 MARKER_COVERAGE: 0.7 # VCP profiling used marker coverage
 MARKER_RATIO: 0.5 # VCP profiling used marker ratio
 ```
