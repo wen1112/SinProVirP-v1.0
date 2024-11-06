@@ -172,8 +172,7 @@ COVER: 80 # diamond balst used coverage
 MARKER_COVERAGE: 0.7 # VCP profiling used marker coverage
 MARKER_RATIO: 0.5 # VCP profiling used marker ratio
 ```
----
 
-### DCS Cloud avaliable
+## DCS Cloud avaliable
 * https://cloud.stomics.tech/library/#/image/image-detail/iNBegneVqbWdV?zone=sz  
 [DCS Help: https://www.stomics.tech/helpcenter/]
