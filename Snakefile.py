@@ -68,8 +68,8 @@ rule diamond_blastx:
         sam = f"{outdir}/{{samp}}/{{samp}}.sam"
     params:
         pipe_directory = config['pipeline_directory'],
-        ID = config['ID'],
-        COVER = config['COVER']
+        IDENTITY = config['IDENTITY'],
+        COVERAGE = config['COVERAGE']
     threads: config['threads']
     shell:"""
         diamond blastx --db {params.pipe_directory}/database/PhageMarkerProtein.V6.Diamond.dmnd \
