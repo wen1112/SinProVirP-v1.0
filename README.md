@@ -1,4 +1,13 @@
 ## VCP: Viral Cluster Profiling
+![Version](https://img.shields.io/badge/version-1.0-blue)
+![last commit](https://img.shields.io/badge/last_commit-2024.11.4-blue)
+![GitHub](https://img.shields.io/github/license/wen1112/VCP_v1.0)
+![GitHub forks](https://img.shields.io/github/forks/wen1112/VCP_v1.0?style=social)
+![GitHub stars](https://img.shields.io/github/stars/wen1112/VCP_v1.0?style=social)
+
+
+
+
 ### A signature protein-based tool developed for genus-level profiling of the human gut virome.
 
 <img width="868" alt="image" src="https://github.com/user-attachments/assets/25e4a88a-2b57-4f6f-919e-e0b416024fbd">
