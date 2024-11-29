@@ -2,7 +2,6 @@
 ![Version](https://img.shields.io/badge/version-1.0-blue)
 ![last commit](https://img.shields.io/badge/last_commit-2024.11.4-blue)
 ![GitHub](https://img.shields.io/github/license/wen1112/VCP_v1.0)
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/wen1112/VCP_v1.0/total)
 ![GitHub stars](https://img.shields.io/github/stars/wen1112/VCP_v1.0?style=social)
 
 
