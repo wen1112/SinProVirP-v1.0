@@ -1,8 +1,8 @@
 ## SinProVirP: Signature-Protein based Virome Profiling tool
 ![Version](https://img.shields.io/badge/version-1.0-blue)
 ![last commit](https://img.shields.io/badge/last_commit-2024.12.13-blue)
-![GitHub](https://img.shields.io/github/license/wen1112/VCP_v1.0)
-![GitHub stars](https://img.shields.io/github/stars/wen1112/VCP_v1.0?style=social)
+![GitHub](https://img.shields.io/github/license/wen1112/SinProVirP-v1.0)
+![GitHub stars](https://img.shields.io/github/stars/wen1112/SinProVirP-v1.0?style=social)
 
 
 
@@ -33,13 +33,13 @@ conda env create -n SinProVirP_env --file /full/path/to/cloned/repo/SinProVirP_e
 
 Activate the environment by executing:
 ```
-conda activate VCP_env
+conda activate SinProVirP_env
 ```
 
 If you have trouble creating the environment using the above commands, you can alternatively follow the instructions to create a enviroment.
 ```
-conda create -n vcp python=3.11
-conda activate vcp
+conda create -n SinProVirP_env python=3.11
+conda activate SinProVirP_env
 
 conda install bioconda::snakemake
 conda install samtools=1.6
@@ -94,7 +94,7 @@ bash work.sh
 
 + work.sh:
 ```
-conda activate VCP_env
+conda activate SinProVirP_env
 snakemake -s /full/path/to/cloned/repo/Snakefile.py \
 --configfile /full/path/to/cloned/repo/test_data/config.yaml \
 --jobs 99 --cores 8 
@@ -142,7 +142,7 @@ Job counts:
         10
 
 2024-05-30 22:03:25.334570
-The sample ./test_data/sample1/sample1.sorted.bam.idxstats.addTaxonomy.final.abundance.txt of VCP pipline is done!
+The sample ./test_data/sample1/sample1.sorted.bam.idxstats.addTaxonomy.final.abundance.txt of SinProVirP pipline is done!
 ```
 
 ### Output file
@@ -173,14 +173,14 @@ The sample ./test_data/sample1/sample1.sorted.bam.idxstats.addTaxonomy.final.abu
 
 
 ## About parameters
-+ If you want to adjust the parameters about VCP pipeline used, you could change the 'config.yaml' file. 
++ If you want to adjust the parameters about SinProVirP pipeline used, you could change the 'config.yaml' file. 
 ```
 # The value setting
 threads: 8 # see usage instructions - can increase if you have more threads available
 IDENTITY: 90 # diamond balst used identity
 COVERAGE: 80 # diamond balst used coverage
-MARKER_COVERAGE: 0.7 # VCP profiling used marker coverage
-MARKER_RATIO: 0.5 # VCP profiling used marker ratio
+MARKER_COVERAGE: 0.7 # SinProVirP profiling used marker coverage
+MARKER_RATIO: 0.5 # SinProVirP profiling used marker ratio
 ```
 
 ## DCS Cloud avaliable
