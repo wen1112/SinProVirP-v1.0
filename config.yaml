@@ -14,6 +14,6 @@ outdir: /full/path/to/output/directory
 threads: 8 # see usage instructions - can increase if you have more threads available
 IDENTITY: 90 # diamond balst used identity
 COVERAGE: 80 # diamond balst used coverage
-MARKER_COVERAGE: 0.7 # 
-MARKER_RATIO: 0.5 #
+MARKER_COVERAGE: 0.7 # SinProVirP profiling used marker coverage
+MARKER_RATIO: 0.5 # SinProVirP profiling used marker ratio
  
