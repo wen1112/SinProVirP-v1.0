@@ -1,7 +1,7 @@
 '''
 2024-05-30
-VCP v1.0
-This is a snakemake rule file script for the VCP pipline.
+SinProVirP v1.0
+This is a snakemake rule file script for the SinProVirP pipline.
 '''
 
 # Step 1 - Import modules
@@ -15,7 +15,7 @@ from datetime import datetime
 
 
 #logger = logging.getLogger(__name__)
-#logging.basicConfig(filename='vcp.log', level=logging.INFO)
+#logging.basicConfig(filename='SinProVirP.log', level=logging.INFO)
 
 # Step 2 - Get information from the config file & read the input file list
 configfile: "config.yaml"
@@ -165,4 +165,4 @@ rule add_taxonomy:
             """
 
 
-#logger.info("The VCP pipline is over!")
+#logger.info("The SinProVirP pipline is done!")
