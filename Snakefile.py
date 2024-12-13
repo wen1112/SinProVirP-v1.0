@@ -165,4 +165,4 @@ rule add_taxonomy:
             """
 
 
-#logger.info("The SinProVirP pipline is done!")
+print("The SinProVirP pipline is done!")
