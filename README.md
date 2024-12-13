@@ -1,6 +1,6 @@
-## VCP: Viral Cluster Profiling
+## SinProVirP: Signature-Protein based Virome Profiling tool
 ![Version](https://img.shields.io/badge/version-1.0-blue)
-![last commit](https://img.shields.io/badge/last_commit-2024.11.4-blue)
+![last commit](https://img.shields.io/badge/last_commit-2024.12.13-blue)
 ![GitHub](https://img.shields.io/github/license/wen1112/VCP_v1.0)
 ![GitHub stars](https://img.shields.io/github/stars/wen1112/VCP_v1.0?style=social)
 
@@ -22,13 +22,13 @@ xxxxxxxxxxxxxxxxxxx
 - **Step One - Clone the repository**  
 Clone the repository to the desired location on your system using the following command:
 ```
-git clone https://github.com/wen1112/VCP_v1.0.git
+git clone https://github.com/wen1112/SinProVirP-v1.0.git
 ```
 
 - **Step Two - Create a new conda environment**  
 Create a new conda environment via the following command, replacing /full/path/to/cloned/repo with the appropriate path to your cloned repository:
 ```
-conda env create -n VCP_env --file /full/path/to/cloned/repo/vcp_env.yaml
+conda env create -n SinProVirP_env --file /full/path/to/cloned/repo/SinProVirP_env.yaml
 ```
 
 Activate the environment by executing:
