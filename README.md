@@ -2,6 +2,7 @@
 ![Version](https://img.shields.io/badge/version-1.0-blue)
 ![last commit](https://img.shields.io/badge/last_commit-2024.12.13-blue)
 ![GitHub](https://img.shields.io/github/license/wen1112/SinProVirP-v1.0)
+[![Github All Releases](https://img.shields.io/github/downloads/wen1112/SinProVirP-v1.0/total.svg)](https://github.com/wen1112/SinProVirP-v1.0/releases/latest)
 ![GitHub stars](https://img.shields.io/github/stars/wen1112/SinProVirP-v1.0?style=social)
 
 
