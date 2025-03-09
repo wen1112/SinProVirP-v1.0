@@ -30,6 +30,8 @@ shift $(($OPTIND - 1))
 
 PREFIX=$OUTDIR
 
+mkdir $OUTDIR
+
 cat $INPUT_fastq1 $INPUT_fastq2 > $OUTDIR/${PREFIX}.R1R2.fastq
 
 diamond blastx --db $Pipeline/database/PhageMarkerProtein.V6.Diamond.dmnd -q $OUTDIR/${PREFIX}.R1R2.fastq -o $OUTDIR/${PREFIX}.sam --max-target-seqs 1 --outfmt 101 --evalue 1e-6 --unal 0  --id $ID --query-cover $COVER
