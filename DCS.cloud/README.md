@@ -1,3 +1,3 @@
 ```
-sh genome.depth.V6.sh -fq1 ./demo/test.read1.fq -fq2 ./demo/test.read2.fq -p /path/to/pipeline -o . -d  90 -c 80 -r 0.5 -t 4 -m 0.7
+bash SinProVirP.sh -a ${Sample_fq1} -b ${Sample_fq2} -o ${Sample_id} -p /home/stereonote/SinProVirP-v1.0 -d 90 -c 80 -r 0.5 -t ${Threads_num} -m 0.7
 ```
