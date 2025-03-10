@@ -13,12 +13,12 @@ while getopts 'a:b:o:p:d:c:r:t:m:' OPT; do
             ID="$OPTARG";;
         c)
             COVER="$OPTARG";; 
-	    r) 
-	        MARKER_RATIO="$OPTARG";;
-	    m)
-	        MARKER_COVERAGE="$OPTARG";;
-	    t)
-	        THREAD="$OPTARG";;
+	r) 
+	    MARKER_RATIO="$OPTARG";;
+	m)
+	    MARKER_COVERAGE="$OPTARG";;
+	t)
+	    THREAD="$OPTARG";;
         ?)
             echo "Usage: `basename $0` [options] filename"
     esac
