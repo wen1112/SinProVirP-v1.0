@@ -1,9 +1,9 @@
 #!/bin/bash
-while getopts 'fq1:fq2:o:p:d:c:r:t:m:' OPT; do
+while getopts 'a:b:o:p:d:c:r:t:m:' OPT; do
     case $OPT in
-        fq1)
+        a)
             INPUT_fastq1="$OPTARG";;
-        fq2)
+        b)
             INPUT_fastq2="$OPTARG";;
         o)
             OUTDIR="$OPTARG";;
@@ -49,10 +49,10 @@ samtools index -@ $THREAD $OUTDIR/${PREFIX}.sorted.bam $OUTDIR/${PREFIX}.sorted.
 samtools idxstats  $OUTDIR/${PREFIX}.sorted.bam >$OUTDIR/${PREFIX}.sorted.bam.idxstats
 
 ##get marker coverage 
-bedtools  genomecov -ibam ${PREFIX}.sorted.bam >${PREFIX}.sorted.bam.coverage
+bedtools  genomecov -ibam $OUTDIR/${PREFIX}.sorted.bam > $OUTDIR/${PREFIX}.sorted.bam.coverage
 
 ##filter mapped reads
-perl $Pipeline/script/filter.coverage.pl ${PREFIX}.sorted.bam.coverage ${PREFIX}.sorted.bam.idxstats  ${PREFIX}.sorted.bam.filter.coverage.idxstats $MARKER_COVERAGE
+perl $Pipeline/script/filter.coverage.pl $OUTDIR/${PREFIX}.sorted.bam.coverage $OUTDIR/${PREFIX}.sorted.bam.idxstats $OUTDIR/${PREFIX}.sorted.bam.filter.coverage.idxstats $MARKER_COVERAGE
 
 ##calculate relative abudance
 python $Pipeline/script/reads_abundance.V6.py $OUTDIR/${PREFIX}.sorted.bam.filter.coverage.idxstats $Pipeline/database/all.324056.cancidate.pc.subdist.n324056.representPR.rmPhageHomo.rmMarkerHomo.addRecovered.rmBacHMM.Shinkage.above3.sameVC $MARKER_RATIO $OUTDIR/${PREFIX}.sorted.bam.idxstats.abundance
