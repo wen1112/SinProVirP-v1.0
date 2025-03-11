@@ -185,5 +185,5 @@ MARKER_RATIO: 0.5 # SinProVirP profiling used marker ratio
 ```
 
 ## DCS Cloud avaliable
-* https://cloud.stomics.tech/library/#/image/image-detail/iNBegneVqbWdV?zone=sz  
-[DCS Help: https://www.stomics.tech/helpcenter/]
+* https://cloud.stomics.tech/library/#/tool/detail/workflow/WF09202503109bppPb/1.0.0?zone=st
+* DCS Help: https://www.stomics.tech/helpcenter
