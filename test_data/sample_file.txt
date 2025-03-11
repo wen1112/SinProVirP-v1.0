@@ -1,1 +1,1 @@
-sample1	/full/path/to/cloned/repo/test_data/test2_R1R2.fastq
+sample1	/full/path/to/cloned/repo/test_data/test2_R1R2.fastq.gz
