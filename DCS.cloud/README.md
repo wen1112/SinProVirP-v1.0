@@ -1,4 +1,4 @@
-### SinProVirP is now available online via DCS Cloud, a multi‑omics data intelligent analysis platform.   
+<img width="1243" alt="image" src="https://github.com/user-attachments/assets/07451627-427e-4bf2-b79b-77027598c452" />### SinProVirP is now available online via DCS Cloud, a multi‑omics data intelligent analysis platform.   
 * **To get started, we have created a [SinProVirP workflow](https://cloud.stomics.tech/library/#/tool/detail/workflow/WF09202503109bppPb/1.0.0?zone=st) on DCS Cloud. This guide will walk you through the steps to use it effectively.**  
 * **If you encounter any issues, you can access the [DCS Help Center](https://www.stomics.tech/helpcenter/) for detailed support and troubleshooting.**
 
@@ -8,7 +8,7 @@
   <img width="1248" alt="image" src="https://github.com/user-attachments/assets/e45777c0-813d-4f38-9d50-172467f2b5b5" />
   <img width="430" alt="image" src="https://github.com/user-attachments/assets/79c9b06c-7916-4d14-bb2b-6c98918fcde5" />  
 
-* **step2: Copy workflow and select item, if you are a new user please [create a project](https://www.stomics.tech/helpcenter/quickstart/quickstart.html#create-a-project) first.**
+* **Step 2: Copy workflow and select item, if you are a new user please [create a project](https://www.stomics.tech/helpcenter/quickstart/quickstart.html#create-a-project) first and project ID will be generated.**
   
   <img width="1243" alt="image" src="https://github.com/user-attachments/assets/14250e76-5532-41a4-9014-2330f9ed872b" />
   
