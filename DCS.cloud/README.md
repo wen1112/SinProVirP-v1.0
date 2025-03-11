@@ -10,7 +10,8 @@
 
 * **step2: Copy workflow and select item, if you are a new user please [create a project](https://www.stomics.tech/helpcenter/quickstart/quickstart.html#create-a-project) first.**
   
-  <img width="1224" alt="image" src="https://github.com/user-attachments/assets/5433283c-7ca3-4e46-ba77-8e500db47ba3" />  
+  <img width="1243" alt="image" src="https://github.com/user-attachments/assets/14250e76-5532-41a4-9014-2330f9ed872b" />
+  
 
 * **step3: Run SinProVirP.**
   
