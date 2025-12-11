@@ -17,7 +17,7 @@
 
 
 ## Citation
-[SinProVirP](https://www.cell.com/cell-reports-methods/fulltext/S2667-2375(25)00286-3)
+[SinProVirP manuscript](https://www.cell.com/cell-reports-methods/fulltext/S2667-2375(25)00286-3)
 ```
 @article{yang2025signature,
   title={A signature-protein-based approach for accurate and efficient profiling of the human gut virome},
