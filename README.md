@@ -17,7 +17,17 @@
 
 
 ## Citation
-xxxxxxxxxxxxxxxxxxx  
+```
+@article{yang2025signature,
+  title={A signature-protein-based approach for accurate and efficient profiling of the human gut virome},
+  author={Yang, Fangming and Xiong, Liwen and Li, Min and Feng, Xuyang and Ren, Huahui and Shi, Zhun and Zhong, Huanzi and Li, Junhua},
+  journal={Cell Reports Methods},
+  year={2025},
+  publisher={Elsevier},
+  doi={10.1016/j.crmeth.2025.101250},
+  url={https://www.cell.com/cell-reports-methods/fulltext/S2667-2375(25)00286-3}
+}
+```
 
 ## Installation  
 
