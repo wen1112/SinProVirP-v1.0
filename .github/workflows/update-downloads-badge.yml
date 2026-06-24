@@ -1,0 +1,70 @@
+name: Update downloads badge
+
+on:
+  schedule:
+    - cron: "23 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-badge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Read repository clone traffic
+        env:
+          REPOSITORY: ${{ github.repository }}
+          TRAFFIC_TOKEN: ${{ secrets.TRAFFIC_TOKEN }}
+        run: |
+          response=$(curl --fail-with-body --retry 3 \
+            -H "Authorization: Bearer $TRAFFIC_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2026-03-10" \
+            "https://api.github.com/repos/$REPOSITORY/traffic/clones")
+
+          count=$(jq -er '.count' <<< "$response")
+          echo "DOWNLOAD_COUNT=$count" >> "$GITHUB_ENV"
+
+      - name: Generate downloads badge
+        run: |
+          mkdir -p badges
+
+          cat > badges/downloads.svg <<EOF
+          <svg xmlns="http://www.w3.org/2000/svg" width="124" height="20" role="img" aria-label="downloads: ${DOWNLOAD_COUNT}">
+            <title>downloads: ${DOWNLOAD_COUNT}</title>
+            <clipPath id="r"><rect width="124" height="20" rx="3"/></clipPath>
+            <g clip-path="url(#r)">
+              <rect width="80" height="20" fill="#555"/>
+              <rect x="80" width="44" height="20" fill="#2ea44f"/>
+            </g>
+            <g fill="#fff" font-family="Verdana,Arial,sans-serif" font-size="11" text-anchor="middle">
+              <text x="40" y="14">downloads</text>
+              <text x="102" y="14">${DOWNLOAD_COUNT}</text>
+            </g>
+          </svg>
+          EOF
+
+      - name: Refresh badge URL
+        run: |
+          sed -E -i \
+            "s#\./badges/downloads\.svg(\?v=[^ \"\)]*)?#./badges/downloads.svg?v=${DOWNLOAD_COUNT}#" \
+            README.md
+
+      - name: Commit updated badge
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md badges/downloads.svg
+
+          if git diff --cached --quiet; then
+            echo "Badge has not changed"
+            exit 0
+          fi
+
+          git commit -m "chore: update downloads badge"
+          git push
