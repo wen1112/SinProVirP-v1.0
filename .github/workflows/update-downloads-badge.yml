@@ -21,30 +21,75 @@ jobs:
           REPOSITORY: ${{ github.repository }}
           TRAFFIC_TOKEN: ${{ secrets.TRAFFIC_TOKEN }}
         run: |
+          if [ -z "$TRAFFIC_TOKEN" ]; then
+            echo "::error::TRAFFIC_TOKEN secret is required"
+            exit 1
+          fi
+
+          mkdir -p badges
+
           response=$(curl --fail-with-body --retry 3 \
             -H "Authorization: Bearer $TRAFFIC_TOKEN" \
             -H "Accept: application/vnd.github+json" \
-            -H "X-GitHub-Api-Version: 2026-03-10" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
             "https://api.github.com/repos/$REPOSITORY/traffic/clones")
 
-          count=$(jq -er '.count' <<< "$response")
-          echo "DOWNLOAD_COUNT=$count" >> "$GITHUB_ENV"
+          printf '%s\n' "$response" > badges/.downloads-latest.json
+
+      - name: Update cumulative downloads history
+        run: |
+          python3 <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          history_path = Path("badges/downloads-history.json")
+          latest_path = Path("badges/.downloads-latest.json")
+
+          if history_path.exists():
+            history = json.loads(history_path.read_text())
+            daily = {str(k): int(v) for k, v in history.get("daily", {}).items()}
+          else:
+            daily = {}
+
+          latest = json.loads(latest_path.read_text())
+          for item in latest.get("clones", []):
+            date = str(item.get("timestamp", ""))[:10]
+            count = int(item.get("count") or 0)
+            if not date or count <= 0:
+              continue
+            daily[date] = max(int(daily.get(date, 0)), count)
+
+          total = sum(daily.values())
+          history = {
+            "note": "Cumulative GitHub clone downloads tracked by this repository workflow. GitHub only exposes the latest 14 days, so history starts when this file was introduced.",
+            "daily": {date: daily[date] for date in sorted(daily)},
+            "total": total
+          }
+          history_path.write_text(json.dumps(history, indent=2, ensure_ascii=False) + "\n")
+
+          with open(os.environ["GITHUB_ENV"], "a", encoding="utf-8") as env:
+            env.write(f"DOWNLOAD_COUNT={total}\n")
+          PY
 
       - name: Generate downloads badge
         run: |
-          mkdir -p badges
+          label_width=80
+          value_width=$(( ${#DOWNLOAD_COUNT} * 7 + 28 ))
+          width=$(( label_width + value_width ))
+          value_x=$(( label_width + value_width / 2 ))
 
           cat > badges/downloads.svg <<EOF
-          <svg xmlns="http://www.w3.org/2000/svg" width="124" height="20" role="img" aria-label="downloads: ${DOWNLOAD_COUNT}">
+          <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="20" role="img" aria-label="downloads: ${DOWNLOAD_COUNT}">
             <title>downloads: ${DOWNLOAD_COUNT}</title>
-            <clipPath id="r"><rect width="124" height="20" rx="3"/></clipPath>
+            <clipPath id="r"><rect width="${width}" height="20" rx="3"/></clipPath>
             <g clip-path="url(#r)">
-              <rect width="80" height="20" fill="#555"/>
-              <rect x="80" width="44" height="20" fill="#2ea44f"/>
+              <rect width="${label_width}" height="20" fill="#555"/>
+              <rect x="${label_width}" width="${value_width}" height="20" fill="#2ea44f"/>
             </g>
             <g fill="#fff" font-family="Verdana,Arial,sans-serif" font-size="11" text-anchor="middle">
               <text x="40" y="14">downloads</text>
-              <text x="102" y="14">${DOWNLOAD_COUNT}</text>
+              <text x="${value_x}" y="14">${DOWNLOAD_COUNT}</text>
             </g>
           </svg>
           EOF
@@ -59,7 +104,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md badges/downloads.svg
+          git add README.md badges/downloads.svg badges/downloads-history.json
 
           if git diff --cached --quiet; then
             echo "Badge has not changed"
