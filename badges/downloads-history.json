@@ -1,5 +1,5 @@
 {
-  "note": "Cumulative GitHub clone downloads tracked by this repository workflow. GitHub only exposes the latest 14 days, so history starts when this file was introduced.",
+  "note": "Cumulative GitHub clone downloads tracked by this repository workflow. GitHub only exposes the latest 14 days, so history starts when this file was introduced. The workflow updates files through the GitHub API to avoid adding its own checkout to clone traffic.",
   "daily": {
     "2026-06-11": 1,
     "2026-06-12": 2,
