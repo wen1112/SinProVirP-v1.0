@@ -2,7 +2,7 @@
 ![Version](https://img.shields.io/badge/version-1.0-blue)
 ![last commit](https://img.shields.io/badge/last_commit-2025.03.05-blue)
 ![GitHub](https://img.shields.io/github/license/wen1112/SinProVirP-v1.0)
-![downloads](./badges/downloads.svg?v=163 "Cumulative GitHub full clones tracked by this repository workflow")
+![downloads](./badges/downloads.svg?v=165 "Cumulative GitHub full clones tracked by this repository workflow")
 
 
 
